@@ -181,7 +181,7 @@ namespace WindowsFormsApp1
 
             this.Invoke((EventHandler)delegate//异步执行 一个线程
             {
-                if (!rbnHex.Checked)//如果未选中name为rbnHex的控件
+                if (!rbnHex.Checked)//如果未选中name为rbnHex的控件,使用ascii模式
                 {
                     //tbxRecvData.Text += sp.ReadLine();
                     StringBuilder sb = new StringBuilder();
@@ -197,7 +197,7 @@ namespace WindowsFormsApp1
                     {
                         Invoke((EventHandler)(delegate
                         {
-                            sb.Append(Encoding.ASCII.GetString(recbuf));  //将整个数组解码为ASCII数组
+                            sb.Append(Encoding.GetEncoding("GB2312").GetString(recbuf));  //将整个数组解码为ASCII数组
                             tbxRecvData.AppendText(sb.ToString());
                         }
                         )
@@ -209,7 +209,7 @@ namespace WindowsFormsApp1
                         MessageBox.Show("请勾选换行", "错误提示");
                     }
                 }
-                else if (rbnHex.Checked)//如果选中
+                else if (rbnHex.Checked)//如果选中  为hex模式
                 {
                     Byte[] ReceivedData = new Byte[sp.BytesToRead];
                     sp.Read(ReceivedData, 0, ReceivedData.Length);
@@ -451,6 +451,21 @@ namespace WindowsFormsApp1
         }
 
         private void rbnChar_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbxRecvData_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbxSendData_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbxBaudRate_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

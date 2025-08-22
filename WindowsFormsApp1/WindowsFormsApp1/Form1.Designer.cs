@@ -167,6 +167,7 @@
             this.cbxBaudRate.Name = "cbxBaudRate";
             this.cbxBaudRate.Size = new System.Drawing.Size(121, 26);
             this.cbxBaudRate.TabIndex = 6;
+            this.cbxBaudRate.SelectedIndexChanged += new System.EventHandler(this.cbxBaudRate_SelectedIndexChanged);
             // 
             // cbxCOMPort
             // 
@@ -311,6 +312,7 @@
             this.tbxRecvData.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.tbxRecvData.Size = new System.Drawing.Size(698, 302);
             this.tbxRecvData.TabIndex = 0;
+            this.tbxRecvData.TextChanged += new System.EventHandler(this.tbxRecvData_TextChanged);
             // 
             // groupBox5
             // 
@@ -333,6 +335,7 @@
             this.tbxSendData.Name = "tbxSendData";
             this.tbxSendData.Size = new System.Drawing.Size(580, 98);
             this.tbxSendData.TabIndex = 2;
+            this.tbxSendData.TextChanged += new System.EventHandler(this.tbxSendData_TextChanged);
             // 
             // btnClearData
             // 
